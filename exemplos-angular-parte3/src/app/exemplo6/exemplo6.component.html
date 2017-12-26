@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="text-primary">Exemplo 6 - Reactive Form</h1>
+      </div>
+    </div>
+    <form [formGroup]="formulario" (ngSubmit)="enviar()">
+      <fieldset>
+        <div class="form-group">
+          <label>Nome</label>
+          <input type="text" class="form-control" formControlName="nome">
+        </div>
+  
+        <div class="form-group">
+          <label>Sobrenome</label>
+          <input type="text" class="form-control" formControlName="sobrenome">
+        </div>
+      </fieldset>
+  
+      <div class="form-group">
+        <label>E-mail</label>
+        <input type="email" class="form-control" formControlName="email">
+      </div>
+  
+      <div class="form-group">
+          <label>Idioma</label>
+          <select class="form-control" formControlName="idioma_id">
+              <option>Selecione uma opção</option>
+              <option *ngFor="let idioma of idiomas; index as i" [ngValue]="i + 1"> {{idioma}} </option>
+            </select>
+        </div>
+    
+  
+      <div class="text-right">
+        <button class="btn btn-success" type="button">Limpar</button>
+        <button class="btn btn-primary" type="submit" [disabled]="!formulario.valid">Enviar</button>
+      </div>
+    </form>
+  </div>

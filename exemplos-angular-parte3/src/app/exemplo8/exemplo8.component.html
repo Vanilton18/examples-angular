@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="text-primary">Exemplo 8 - Filtro</h1>
+      </div>
+    </div>
+    <!-- Formulario -->
+    <div class="row">
+      <div class="col-md-12">
+        <form actions="">
+          <label for="busca"></label>
+          <input id="busca" name="busca" type="text" class="form-control" [formControl]="busca">
+        </form>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>User Id</th>            
+                <th>Title</th>
+                <th>Body</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let post of postagens | posts: busca.value">
+                <th scope="row">{{post.id}}</th>
+                <td>{{post.userId}}</td>            
+                <td>{{post.title}}</td>
+                <td>{{post.body}}</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+
+ 
+  </div>

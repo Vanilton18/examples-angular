@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="text-primary">Exemplo 5 - Template Driven Form</h1>
+      </div>
+    </div>
+    <form #formulario (ngSubmit)="enviar()">
+      <fieldset>
+        <div class="form-group">
+          <label>Nome</label>
+          <input type="text" class="form-control" name="nome" [(ngModel)]="pessoa.nome" required>
+        </div>
+  
+        <div class="form-group">
+          <label>Sobrenome</label>
+          <input type="text" class="form-control" name="sobrenome" [(ngModel)]="pessoa.sobrenome" required>
+        </div>
+      </fieldset>
+  
+      <div class="form-group">
+        <label>E-mail</label>
+        <input type="email" class="form-control" name="email" [(ngModel)]="pessoa.email" required>
+      </div>
+  
+        <div class="form-group">
+        <label>Idioma</label>
+        <select class="form-control" [(ngModel)]="pessoa.idioma_id" name="idioma_id">
+            <option>Selecione uma opção</option>
+            <option *ngFor="let idioma of idiomas; index as i" [ngValue]="i + 1"> {{idioma}} </option>
+          </select>
+      </div>
+  
+      <div class="text-right">
+        <button class="btn btn-success" type="button" (click)="limpar()">Limpar</button>
+        <button class="btn btn-primary" type="submit" [disabled]="!formulario.valid">Enviar</button>
+      </div>
+    </form>
+  </div>

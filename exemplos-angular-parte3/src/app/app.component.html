@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <a class="nav-item nav-link" routerLink="">Principal</a>
+      <a class="nav-item nav-link" routerLink="exemplo2">Exemplo2</a>
+      <a class="nav-item nav-link" routerLink="exemplo3/1">Exemplo3 - Lendo Parâmetro</a>
+      <a class="nav-item nav-link" [routerLink]="['/exemplo3',2]">Exemplo 3 alternativo</a>
+      <a class="nav-item nav-link" routerLink="exemplo404">Exemplo 404 Not Found</a>
+    </div>
+    <div class="col-md-6">
+      <a class="nav-item nav-link" routerLink="exemplo5">Exemplo 5 - Formulario</a>
+      <a class="nav-item nav-link" routerLink="exemplo6">Exemplo 6 - Formulario 2 - ReactiveFormsModule</a>
+      <a class="nav-item nav-link" routerLink="exemplo7">Exemplo 7</a>
+      <a class="nav-item nav-link" routerLink="exemplo8">Exemplo 8 - Filtro (Pipe)</a>
+    </div>
+  </div>
+</div>
+
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
